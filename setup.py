@@ -20,7 +20,7 @@ setup(
 	],
 	extras_require = {
 		'Additional support for parsing files': ['beautifulsoup4'],
-		'List similar annotations when selecting genotypes': ['fuzzywuzzy'],
+		'List similar annotations when selecting genotypes': ['rapidfuzz'],
 		'Generate composite graphs from the genotye/lineage/timeseries plots': ["pillow"],
 		'To run tests': ["pytest"]
 	},

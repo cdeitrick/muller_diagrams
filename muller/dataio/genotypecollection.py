@@ -59,9 +59,9 @@ class GenotypeCollection(collections.UserDict):
 			all_annotations = [i.annotations for i in self.values()]
 			available = sorted(itertools.chain.from_iterable(all_annotations))
 			try:
-				from fuzzywuzzy import process
-				similar = process.extract(value, available)
-				similar = [i[0] for i in similar if i[1] > 80]
+				from rapidfuzz import process
+				similar = process.extract(value, available, score_cutoff=80)
+				similar = [i[0] for i in similar]
 			except ModuleNotFoundError:
 				similar = [i for i in available if value in i]
 			if similar:
